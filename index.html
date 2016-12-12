@@ -13,6 +13,7 @@
 	
 	<!-- Bootstap core -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
@@ -41,9 +42,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a data-toggle="tab" href="#/">Home</a></li>
+            <li><a data-toggle="tab" href="#about">About</a></li>
+            <li><a data-toggle="tab" href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -66,13 +67,7 @@
 		});
 	});
 	</script>
-	
-	<script>
-		$(".nav a").on("click", function(){
-		$(".nav").find(".active").removeClass("active");
-		$(this).parent().addClass("active");
-		});
-	</script>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
