@@ -15,13 +15,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="other.css" rel="stylesheet">
 
   </head>
 
-  <body>
+  <body ng-app="myApp">
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default">
@@ -37,15 +41,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container-fluid">
+	
+	<div class="ng-view"></div>
+    
+	<div class="container-fluid">
 
 		<div class="row row-eq-height">
 			<div class="col-xs-8 col-md-6 vertical-center">
@@ -75,6 +81,22 @@
 			</div>
 		</div>
     </div> <!-- /container -->
+	
+	<script>
+	var app = angular.module("myApp", ["ngRoute"]);
+	app.config(function($routeProvider) {
+		$routeProvider
+		.when("/", {
+			templateUrl : "pages/main.htm"
+		})
+		.when("/about", {
+			templateUrl : "pages/about.htm"
+		})
+		.when("/contact", {
+			templateUrl : "pages/contact.htm"
+		});
+	});
+	</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
