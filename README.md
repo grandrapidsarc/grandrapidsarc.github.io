@@ -1,1 +1,0 @@
-# grandrapidsarc.github.io
